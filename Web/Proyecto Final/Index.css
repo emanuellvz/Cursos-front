@@ -1,0 +1,328 @@
+/*Diseño mobile first*/
+* {
+  box-sizing: border-box;
+}
+
+/*Márgen 0 y alineación de texto centrada*/
+
+body {
+  margin: 0;
+  text-align: center;
+  font-family: "Open-Sans";
+}
+
+/*Textos--------------------------------------*/
+
+/*Tipografías*/
+@font-face {
+  font-family: "OpenSans-Regular";
+  src: url(Tipografías/OpenSans-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "OpenSans-Bold";
+  src: url(Tipografías/OpenSans-Bold.ttf);
+  font-style: normal;
+}
+body {
+  font-family: "OpenSans-Regular";
+}
+h1 {
+  font-family: "OpenSans-bold";
+}
+
+/*Tamaños,peso y opacidad*/
+h1 {
+  font-size: 44px;
+}
+h2 {
+  font-size: 28px;
+}
+h3 {
+  font-size: 24px;
+  font-weight: 100;
+  opacity: 0.8;
+}
+p {
+  font-size: 16px;
+}
+
+/*Colores*/
+.claro {
+  color: #f5f0ed;
+}
+.oscuro {
+  color: #3c3c3b;
+}
+.rojo2 {
+  color: #d03b40;
+}
+
+/*Textos a la izquierda*/
+.left {
+  text-align: left;
+}
+
+/*Padding*/
+.texto {
+  padding: 100px 20px;
+}
+.blanco .texto {
+  padding-top: 0px;
+}
+.fondo1,
+.fondo2 {
+  padding-top: 80px;
+}
+
+/*Termina textos----------------------*/
+
+/*---------------*/
+
+/*cajas-------------------------------*/
+
+/*Tamaños y fondos*/
+.rojo,
+.beige {
+  width: 100%;
+  height: 600px;
+}
+.blanco {
+  max-height: 650px;
+  background-color: beige;
+}
+.rojo {
+  background-color: #d03b40;
+}
+.beige {
+  background-color: #ded6c0;
+}
+.gris {
+  height: 100px;
+  background-color: #241d1b;
+  padding: 10px;
+}
+.fondo1 {
+  height: 800px;
+  background-image: url(Imágenes/Fondo1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.fondo2 {
+  height: 800px;
+  background-image: url(Imágenes/Fondo2.jpg);
+  background-size: cover;
+}
+/*Termina cajas*/
+
+/*-------------*/
+
+/*Contenedor1---------------------------*/
+
+/*Menú*/
+
+/*Botón menú*/
+#boton {
+  width: 60px;
+  height: 60px;
+  background-color: #d03b40;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  padding: 8 0;
+}
+/*Lineas*/
+.linea {
+  width: 80%;
+  height: 8px;
+  background-color: #f5f0ed;
+  margin: 0 auto 10px auto;
+}
+#menu li {
+  list-style: none;
+  line-height: 1.5;
+  text-align: left;
+}
+#menu h3 {
+  font-weight: bold;
+  display: inline;
+  line-height: 3;
+}
+#menu h3:hover {
+  border-bottom: 5px solid white;
+}
+
+/*Termina menú*/
+
+/*Linea entre título y texto*/
+.linea1 {
+  background-color: white;
+  height: 5px;
+  width: 200px;
+  margin: 0 auto;
+  border-radius: 20px;
+  opacity: 0.8;
+}
+
+/*Logo*/
+.fondo1 img {
+  width: 200px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+/*Termina contenedor1----------------*/
+
+/*-------------------*/
+
+/*Contenedor4 (Fondo2)----------------*/
+
+/*Botón*/
+.boton {
+  border: 4px solid;
+  height: 80px;
+  width: 450px;
+  margin: 0 auto;
+  position: relative;
+}
+.boton h3 {
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+  left: 8%;
+}
+.boton:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/*Termina contenedor4--------------------*/
+
+/*-------------------*/
+
+/*Contenedores blancos*/
+
+/*Padding*/
+.blanco {
+  padding-top: 30px;
+}
+/*Íconos*/
+.icono {
+  height: 180px;
+  width: 180px;
+  margin: 0 auto;
+}
+/*-------------------*/
+
+/*Contenedor beige2---------------*
+/*Enlace a mail*/
+.mail {
+  text-decoration: none;
+  color: #d03b40;
+  font-weight: bold;
+}
+/*-----------------------*/
+
+/*Contenedor rojo2-----------*/
+.maps {
+  text-decoration: none;
+  color: #f5f0ed;
+  font-weight: bold;
+}
+/*------------------------*/
+
+/*Interacciones con javascript del menú (hasta los 1130px de ancho)*/
+@media screen and (max-width: 1130px) {
+  .js #menu {
+    max-height: 0%;
+    min-width: 200px;
+    overflow: hidden;
+    transition: max-heigth 0.5s;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    background-color: #241d1b;
+    border-radius: 15px;
+    z-index: 1;
+  }
+  .js #menu.desplegado {
+    max-height: 500px;
+  }
+}
+/*------------------------------------*/
+
+/*Contenedores flotan (Desde los 1131px de ancho)*/
+@media screen and (min-width: 1131px) {
+  /*Contenedores blancos*/
+  .blanco {
+    height: 300;
+    width: 50%;
+    float: left;
+  }
+  .contenedor2 {
+    height: 600px;
+  }
+  /*Textos e íconos flotan*/
+  .blanco .texto,
+  .blanco .icono {
+    float: left;
+  }
+  /*Redimensión de los íconos*/
+  .icono img {
+    max-width: 100%;
+  }
+  .icono {
+    width: 25%;
+  }
+  /*Nuevos estilos de texto*/
+  .blanco .texto {
+    width: 75%;
+    height: 200px;
+  }
+  .blanco h2,
+  .blanco h3 {
+    margin: 0;
+  }
+  /*Termina contenedores blancos*/
+
+  /*Contenedores rojo y beige*/
+  .contenedor1 {
+    height: 600px;
+  }
+  .rojo,
+  .beige {
+    width: 50%;
+    float: left;
+  }
+  /*Menú*/
+
+  /*Ocultar botón*/
+  #boton {
+    display: none;
+  }
+
+  /*Mostrar Listas*/
+  ul {
+    overflow: visible;
+    position: absolute;
+    right: 0;
+    top: 20;
+  }
+  li {
+    width: 150px;
+    height: 50px;
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+/*--------------------------------------*/
+
+/*Tamaño de texto de contenedores blancos (Entre los 1131px y 1401px de ancho)*/
+@media screen and (min-width: 1131px) and (max-width: 1401px) {
+  .blanco h3 {
+    font-size: 20px;
+  }
+}
+/*--------------------------------------*/

@@ -1,0 +1,21 @@
+@font-face {
+    font-family:"OpenSans-Regular";
+    src:url(Tipografías/OpenSans-Regular.ttf);
+    font-weight:normal;
+    font-style:normal
+}
+@font-face{
+    font-family:"OpenSans-Bold";
+    src:url(Tipografías/OpenSans-Bold.ttf);
+    font-style:normal
+}
+
+#regular {
+    font-family:"OpenSans-Regular"}
+
+#bold{
+    font-family:"OpenSans-Bold"
+}
+    
+
+      

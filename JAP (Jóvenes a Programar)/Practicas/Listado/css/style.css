@@ -1,0 +1,18 @@
+  .container {
+    max-width: 960px;
+  }
+  main {
+    min-height: calc(100vh - 215px);
+  }
+
+  .cont {
+    overflow: auto;
+    height: 200px;
+  }
+
+  li{
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color:rgb(184, 181, 181);
+  }

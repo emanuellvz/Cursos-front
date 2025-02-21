@@ -1,0 +1,444 @@
+
+*{
+    box-sizing: border-box
+}
+body {
+  margin: auto;
+  min-height: 100vh;
+  background-image: url(https://preview.redd.it/in73r6sbixz31.png?width=4096&format=png&auto=webp&s=810fa4aef8f17b2ccf3ca4c18601eb731904d37e);
+  background-size: cover;
+  background-position: center;    
+  font-family: var(--font);
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+    
+}
+
+/*Pantalla Bienvenida*/
+
+.bienvenida {
+  display: none;
+  //display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url(https://image.freepik.com/vector-gratis/flash-abstracto-azul-sobre-fondo-negro_219144-29.jpg);
+    background-size: cover;
+    background-position: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 1;
+}
+
+.bienvenida h1 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+    color:rgb(225,204,71);
+  font-size: 5rem;
+  position:absolute;
+    top:310px
+}
+
+#logo-lol{
+    position:absolute;
+    top:100px;
+    width: 700px;
+}
+
+.bienvenida-botones {
+    position: absolute;
+    top:500px;
+  display: flex;
+}
+
+.bienvenida button {
+  padding: 1rem 3rem;
+  margin: 0 1rem;
+  min-width: 20rem;
+}
+/*Termina Bienvenida*/
+
+/*Contadores*/
+
+.cabecera {
+  padding: 0.5rem 2rem;
+  background: white;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.cabecera-titulo {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  line-height: 1;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.cabecera-num {
+  font-family: var(--font-display);
+  color: var(--hotpink);
+  font-weight: 400;
+  font-size: 3.5rem;
+  line-height: 0.9;
+}
+
+.contadores {
+  display: flex;
+}
+
+.contador-item {
+  margin-right: 2rem;
+}
+
+.nivelDiv{
+    position: absolute;
+    right: 30px
+}
+
+/*Termina Contadores*/
+
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+   /* background-color: #fdeaf2;*/
+}
+
+/*Estilos Mesa*/
+.mesa {
+  display: flex;
+  flex-wrap:wrap;
+ align-items: center;
+  align-content: center;
+  max-width: 50rem;
+  margin: auto;
+  border-radius: 30px;
+  padding:30px    
+}
+
+/*Estilos Tarjetas*/
+
+.tarjeta {
+  width: 160px;
+  height: 200px;
+  margin: 0.5rem;
+  border-radius: 0.3em;
+  background-image: url(Imagenes/LoL-1.jpg);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: 0.3s;
+  cursor: pointer;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.tarjeta__contenido {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: rotateY(-180deg);
+  backface-visibility: hidden;
+  background-color: white;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 0.3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  padding-top: 0.4rem;
+}
+
+.tarjeta__contenido img {
+  width: 160px;
+  height: 200px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.tarjeta__contenido::selection {
+  background: transparent;
+}
+
+.tarjeta.descubierta {
+  transform: rotateY(-180deg);
+}
+
+/*Acierto y error*/
+@keyframes error {
+  10%,
+  90% {
+    transform: rotateY(-180deg) translateX(-1px);
+  }
+  20%,
+  80% {
+    transform: rotateY(-180deg) translateX(2px);
+  }
+  30%,
+  50%,
+  70% {
+    transform: rotateY(-180deg) translateX(-4px);
+  }
+  40%,
+  60% {
+    transform: rotateY(-180deg) translateX(4px);
+  }
+}
+
+@keyframes acierto {
+  from {
+    transform: rotateY(-180deg) scale3d(1, 1, 1);
+    opacity: 1;
+  }
+
+  25% {
+    transform: rotateY(-180deg) scale3d(1.1, 1.1, 1.1);
+    opacity: 1;
+  }
+
+  to {
+    transform: rotateY(-180deg) scale3d(1, 1, 1);
+    opacity: 0;
+  }
+}
+
+.acertada {
+  pointer-events: none;
+}
+
+.acertada .tarjeta__contenido {
+  animation: acierto 1.3s ease-in-out forwards;
+}
+
+.error .tarjeta__contenido{
+  animation: error 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+/*------------------------------------------------*/
+/*Termina Tarjetas*/
+
+/*Pantallas*/
+/*Estilos Pantallas*/
+#timeOver,
+.sube-nivel,
+.game-over,
+.end-game {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url(https://nexus.leagueoflegends.com/wp-content/uploads/2017/11/LOL_CMS_152_Article_01_dsnpbw97lpr2tcdw6cjm.jpg);
+    background-size: cover;
+    background-position: center
+}
+
+/*Pantallas Visibles*/
+#timeOver.visible,
+.bienvenida.visible,
+.sube-nivel.visible,
+.game-over.visible,
+.end-game.visible,
+#musica2.visible{
+  display: flex;
+}
+
+#musica.no-visible{
+    display:none
+}
+
+
+/*Mensajes de Pantallas*/
+.modal {
+  background-image: url(Imagenes/fondo_azul.jpg);
+    background-size: cover;
+    background-position: 
+  padding: 3rem 3rem 1rem;
+  margin: auto;
+    width: 500px;
+    height: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+    padding-top: 50px;
+  padding-bottom: 50px;    
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#volver{
+    margin: 0
+}
+
+.modal h2 {
+  color:rgb(225,204,85);;
+  font-family: var(--font-display);
+  margin: 0;
+}
+
+.modal p {
+  font-size: 1.5rem;
+    color:rgb(225,204,85)
+}
+/*------------------------*/
+
+/*Botones de Pantallas*/
+.modal button {
+  margin: 3rem 0;
+}
+
+.modal .reiniciar {
+  color: var(--hotpink);
+  background: transparent;
+  border: 0;
+  text-transform: capitalize;
+  font-family: var(--font);
+  font-size: 1rem;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+  background-image: url(https://fondosmil.com/fondo/28255.jpg);
+  padding: 0.75rem 4rem;
+  border-radius: 5rem;
+  color: rgb(225,200,85);
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  line-height: 1;
+  transition: 0.3s;
+}
+
+#control{
+    color:white
+}
+
+#cierra-niveles{
+    color:white
+}
+
+button:hover,
+button:focus {
+  opacity: 0.9;
+  outline: 0;
+}
+/*--------------------*/
+
+/*Termina Pantallas------------------*/
+
+/*Boton de musica*/
+.musica{
+     cursor: pointer;
+  border: 0;
+  background-image:url(Imagenes/Sonido2.png);
+    background-size: cover;
+    background-position: center;
+    width: 150px;
+    height: 150px;
+  border-radius: 50%;
+  color: white;
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  line-height: 1;
+  transition: 0.3s;
+    position: absolute;
+    bottom: 20px;
+    left:20px;
+    z-index: 1
+}
+
+#musica2{
+    display:none;
+}
+
+.sonido{
+  display: none;
+}
+/*Termina Sonido---------------*/
+
+.oculto{
+    display:none
+}
+
+/*Control Niveles*/
+
+
+.control-nivel{
+  position: absolute;
+  font-size: .8rem;
+  top: 2.9rem;
+  right: .5rem;
+  padding: 0;
+  width: 1.1rem;
+  height: 1.1rem;
+  line-height: .68rem;
+  display: flex;
+  justify-content: center;
+  background:var(--hotpink);
+}
+
+.control-oculto{
+  display: none;
+}
+
+.selecciona-nivel{
+  background-color: var(--hotpink);
+  position: fixed;
+  width: 250px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: translateX(250px);
+  transition: transform .3s;
+  padding: 1rem 2rem;
+}
+
+.selecciona-nivel.visible{
+  transform: translateX(0);
+}
+
+.selecciona-nivel button{
+  background: transparent;
+  padding: 0;
+}
+
+.selecciona-nivel ul{
+ list-style: none;
+  padding-left: 0;
+}
+
+.selecciona-nivel li{
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.cierra-niveles{
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 2rem;
+  font-family: sans-serif;
+  font-weight: 300;
+}

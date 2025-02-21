@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+      
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      
+    <title>Memory</title>
+      
+    <link href="https://fonts.googleapis.com/css?family=Archivo|Archivo+Narrow:400,600" rel="stylesheet" />
+    <link href="Estilos2.css" rel="stylesheet" />
+    <link href="Site.css" rel="stylesheet" />
+      
+  </head>
+
+  <body>
+      
+      <!--Pantalla Inicial-->
+      
+    <div id="bienvenida" class="bienvenida">
+        <img id=logo-lol src="Imagenes/1200px-League_of_Legends_2019_vector.png">
+        <h1>Memory</h1>
+        
+        <!--Botones-->
+      <div class="bienvenida-botones">    
+        <button id="juego-normal" type="submit">¡Quiero jugar!</button>
+        <button id="juego-relax" type="submit">Modo relax</button>
+        </div>
+        <!---------------------------->
+    </div>
+    <!--Termina Pantalla Inicial-->
+      
+      
+      <!--Botones fondo-->
+        <div id="musica" class="musica"></div>
+        <div id="musica2" class="musica"></div>
+
+        <!--Contadores-->
+      
+    <header class="cabecera">
+    <div class="contadores">
+        <!--Contador de Movimientos-->
+    <div id="movimientos" class="contador-item">
+    <h4 class="cabecera-titulo">Movimientos</h4>
+    <div class="cabecera-num">
+    <span id="mov">00</span>/<span id="mov-total">20</span>
+    </div>
+    </div>
+        <!----------------------------->
+        
+        <!--Cronometro-->
+    <div id="cronometro" class="contador-item">
+    <h4 class="cabecera-titulo">Tiempo</h4>
+    <div class="cabecera-num">
+    <span id="minutos">00</span>:<span id="segundos">00</span>
+    </div>
+    </div>
+        <!----------------------------->
+        
+        <!--Contador de Puntos-->
+    <div class="contador-item">
+    <h4 class="cabecera-titulo">Puntos</h4>
+    <div class="cabecera-num"><span id="puntos">000</span></div>
+    </div>
+</div>
+        <!------------------------------>
+     
+        <!--Contador Nivel-->
+    <div class="nivelDiv">
+    <h4 class="cabecera-titulo">Nivel</h4>
+    <div class="cabecera-num"><span id="nivel">01</span></div>
+    </div>
+        <button id="control-nivel" class="control-nivel">...</button>
+        <!------------------>
+    </header>
+        <!--Termina Contadores--------------------->
+    
+    <main>
+        
+        <!--Mesa-->
+      <div id="mesa" class="mesa"></div>
+        <!----------------------------->
+        
+        <!--Pantalla aumento nivel-->
+      <div id="subeNivel" class="sube-nivel">
+        <div class="modal">
+          <h2>¡Así se hace!</h2>
+          <button id="subir">Sigue avanzando</button>
+                  </div>
+      </div>
+        <!------------------------------------------->
+        
+        <!--Pantalla Game Over-->
+      <div id="gameOver" class="game-over">
+        <div class="modal">
+          <h2>¡Oh no!</h2>
+          <p>Te has quedado sin movimientos</p>
+          <button class="reiniciar">Reiniciar</button>
+        </div>
+      </div>
+        <!------------------------------------------->
+        
+        <!--Pantalla Fin del juego-->
+      <div id="endGame" class="end-game">
+        <div class="modal">
+          <h2>¡Enhorabuena!</h2>
+          <p>Has superado todos los niveles</p>
+          <button id="volver">Volver al Inicio</button>
+        </div>
+      </div>
+        <!------------------------------------------->
+        
+        <!--Pantalla sin tiempo-->
+        <div id="timeOver">
+        <div class="modal">
+            <h2>Te has quedado sin tiempo</h2>
+            <button class="reiniciar">Reiniciar</button>
+            </div>
+        </div>
+        <!-------------------------------------------->
+        
+    </main>
+      
+      <!--Control Niveles-->
+      <div  class="selecciona-nivel">
+        <button id="cierra-niveles" class="cierra-niveles">X</button>
+          <ul></ul>
+      </div>
+      <!----------------------------------------------->
+      
+<!--Sonidos-->
+      <audio
+             src="Sonidos/La%20M%C3%BAsica%20de%20League%20of%20Legends%20Freljord.mp3"
+             class="sonido"
+             id="sonido-fondo"
+             preload="auto"
+             ></audio>
+   
+      <!--Twitch-->
+      <audio
+             src="Sonidos/Twitch1.mp3"
+             class="sonido"
+             id="twitch1"
+             preload="auto"
+             ></audio>
+      
+      <audio
+             src="Sonidos/Twitch2.mp3"
+             class="sonido"
+             id="twitch2"
+             preload="auto"
+             ></audio>
+      <audio
+             src="Sonidos/Twitch3.mp3"
+             class="sonido"
+             id="twitch3"
+             preload="auto"
+             ></audio>
+      
+      <!--Garen-->
+      <audio
+             src="Sonidos/Garen1.mp3"
+             class="sonido"
+             id="garen1"
+             preload="auto"
+             ></audio>
+      <audio
+             src="Sonidos/Garen2.mp3"
+             class="sonido"
+             id="garen2"
+             preload="auto"
+             ></audio>
+       <audio
+             src="Sonidos/Garen3.mp3"
+             class="sonido"
+             id="garen3"
+             preload="auto"
+             ></audio>
+      
+      <!--Lulu-->
+      
+      <audio
+             src="Sonidos/Lulu1.mp3"
+             class="sonido"
+             id="lulu1"
+             preload="auto"
+             ></audio>
+      
+      <audio
+             src="Sonidos/Lulu2.mp3"
+             class="sonido"
+             id="lulu2"
+             preload="auto"
+             ></audio>
+      
+      <audio
+             src="Sonidos/Lulu3.mp3"
+             class="sonido"
+             id="lulu3"
+             preload="auto"
+             ></audio>
+      
+      <!--Yuumi-->
+      
+      <audio
+             src="Sonidos/Yuumi1.mp3"
+             class="sonido"
+             id="yuumi1"
+             preload="auto"
+             ></audio>
+      
+      <audio
+             src="Sonidos/Yuumi2.mp3"
+             class="sonido"
+             id="yuumi2"
+             preload="auto"
+             ></audio>
+      
+      <audio
+             src="Sonidos/Yuumi3.mp3"
+             class="sonido"
+             id="yuumi3"
+             preload="auto"
+             ></audio>
+      
+      <!--Katarina-->
+      
+       <audio
+             src="Sonidos/Katarina1.mp3"
+             class="sonido"
+             id="katarina1"
+             preload="auto"
+             ></audio>
+       <audio
+             src="Sonidos/Katarina2.mp3"
+             class="sonido"
+             id="katarina2"
+             preload="auto"
+             ></audio>
+       <audio
+             src="Sonidos/Katarina3.mp3"
+             class="sonido"
+             id="katarina3"
+             preload="auto"
+             ></audio>
+      
+      <!--Aurelion-->
+      
+      <audio
+             src="Sonidos/Aurelion1.mp3"
+             class="sonido"
+             id="aurelion1"
+             preload="auto"
+             ></audio>
+      <audio
+             src="Sonidos/Aurelion2.mp3"
+             class="sonido"
+             id="aurelion2"
+             preload="auto"
+             ></audio>
+      <audio
+             src="Sonidos/Aurelion3.mp3"
+             class="sonido"
+             id="aurelion3"
+             preload="auto"
+             ></audio>
+<!--------------------------------------------->
+      
+      <!--Javascript-->
+   <script src="Variables%20Globales.js"></script>
+<script src="Barajar%20y%20Repartir.js"></script>
+<script src="Descubrir%20y%20Comparar.js"></script>
+    <script src="Acierto%20y%20Error.js"></script>
+    <script src="Cron%C3%B3metro%20y%20Contador.js"></script>
+    <script src="Finalizar.js"></script>
+    <script src="Cambia%20Nivel.js"></script>
+    <script src="Game%20Over.js"></script>
+    <script src="menu-niveles.js"></script>
+    <script src="Iniciar.js"></script>
+    <script src="Comienza-juego.js"></script>
+    <!-----------------------------------------> 
+  </body>
+</html>

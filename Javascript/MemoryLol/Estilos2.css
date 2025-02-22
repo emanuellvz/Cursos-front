@@ -350,7 +350,7 @@ button:focus {
 .musica{
      cursor: pointer;
   border: 0;
-  background-image:url(Imagenes/Sonido2.png);
+  background-image:url(Imagenes/sonido2.png);
     background-size: cover;
     background-position: center;
     width: 150px;
